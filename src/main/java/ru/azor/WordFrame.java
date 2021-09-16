@@ -32,6 +32,7 @@ public class WordFrame extends JFrame {
             @Override
             public void run() {
                 jLabel.setText(DataBaseService.getWord());
+                pack();
             }
         }, 0, TimeUnit.MINUTES.toMillis(5));
         addMouseListener(new MouseAdapter() {
