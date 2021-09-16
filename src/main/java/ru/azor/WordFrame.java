@@ -15,12 +15,13 @@ public class WordFrame extends JFrame {
     private WordFrame() {
         setBounds(400, 100, 600, 50);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
+        setResizable(true);
         setUndecorated(true);
         setOpacity(0.5f);
         setAlwaysOnTop(true);
         Font font = new Font("Times New Roman", Font.BOLD, 36);
-        JLabel jLabel = new JLabel("Word of the Day", JLabel.CENTER);
+        JLabel jLabel = new JLabel();
+        jLabel.setHorizontalAlignment(JLabel.CENTER);
         jLabel.setFont(font);
         add(jLabel);
         DataBaseService.createConnection();
@@ -39,6 +40,7 @@ public class WordFrame extends JFrame {
                 if (e.getButton() == 1) {
                     isClicked = false;
                     jLabel.setText(DataBaseService.getWord());
+                    pack();
                 }
             }
         });
@@ -73,6 +75,7 @@ public class WordFrame extends JFrame {
                 DataBaseService.closeConnection();
             }
         });
+        pack();
         setVisible(true);
     }
 
