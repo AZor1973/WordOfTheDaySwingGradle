@@ -8,6 +8,7 @@ public class AddFrame extends JFrame {
         setBounds(400, 150, 500, 80);
         setTitle("Enter a new word with translation");
         setResizable(false);
+        setAlwaysOnTop(true);
         JTextField jTextField = new JTextField("", JTextField.CENTER);
         Font font = new Font("Times New Roman", Font.BOLD, 24);
         jTextField.setFont(font);
